@@ -1,106 +1,122 @@
-<div class="bg-primary text-white">
-    <div class="py-1">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-2">
-                    <a href="<?= base_url() ?>" class="text-white text-decoration-none d-flex justify-content-center">
-                        <h1 class="h2">Elysia Book</h1>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav bg-primary " id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <div class="sb-sidenav-menu-heading text-white">Header</div>
+                    <a class="nav-link " href="<?= base_url() ?>">
+                        <div class="sb-nav-link-icon"><i class="bi bi-speedometer"></i></div>
+                        Dashboard
+                    </a>
+                    <a class="nav-link " href="<?= base_url('member') ?>">
+                        <div class="sb-nav-link-icon"><i class="bi bi-person-badge"></i></div>
+                        Karyawan
+                    </a>
+                    <div class="sb-sidenav-menu-heading text-white">Body</div>
+                    <a class="nav-link collapsed " href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="bi bi-book"></i></div>
+                        Buku
+                        <div class="sb-sidenav-collapse-arrow"><i class="bi bi-caret-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="#">Ensiklopedia</a>
+                            <a class="nav-link" href="#">Majalah</a>
+                            <a class="nav-link" href="#">Kamus</a>
+                            <a class="nav-link" href="#">Komik/Manga</a>
+                            <a class="nav-link" href="#">Novel</a>
+                            <a class="nav-link" href="#">Biografi</a>
+                            <a class="nav-link" href="#">Naskah</a>
+                            <a class="nav-link" href="#">Light Novel</a>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <div class="sb-nav-link-icon"><i class="bi bi-pencil"></i></div>
+                        Alat
+                        <div class="sb-sidenav-collapse-arrow"><i class="bi bi-caret-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                <a class="nav-link" href="#">Adhensive & Tape</a>
+                                <a class="nav-link" href="#">Alat Tulis</a>
+                                <a class="nav-link" href="#">Pemotong Kertas</a>
+                                <a class="nav-link" href="#">Penjilidan & Penyimpanan</a>
+                                <a class="nav-link" href="#">Produk Kertas</a>
+                            </a>
+                        </nav>
+                    </div>
+                    <div class="sb-sidenav-menu-heading text-white">Footer</div>
+                    <a class="nav-link" href="#">
+                        <div class="sb-nav-link-icon"><i class="bi bi-clock-history"></i></div>
+                        History Log
+                    </a>
+                    </a>
+                    <a class="nav-link" href="#">
+                        <div class="sb-nav-link-icon"><i class="bi bi-cash-coin"></i></div>
+                        Data Penjualan
                     </a>
                 </div>
-                <div class="col-lg-10">
-                    <div class="dropdown d-flex justify-content-end mt-2">
-                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="assets/img/icon.gif" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                            <span class="d-none d-sm-inline mx-1"><?= $sess->user->nama ?></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-light text-small shadow">
-                            <li><a class="dropdown-item" href="<?php if (isset($sess->user->id)) { ?>
-                        <?= base_url('logout');
-                                                                } ?>">Sign out</a></li>
-                        </ul>
+            </div>
+            <div class="sb-sidenav-footer text-white">
+                <div class="small">Logged in as:</div>
+                <?= $sess->user->nama ?>
+            </div>
+        </nav>
+    </div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-2 py-2">
+                <h1 class="py-1">Data Karyawan</h1>
+                <div class="card mb-4">
+                    <div class="card-body">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore temporibus dolorem illum soluta porro iure facilis nihil magnam officia accusamus veniam aspernatur culpa, voluptatibus exercitationem velit inventore aliquam assumenda magni?
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        Data Karyawan
+                    </div>
+                    <div class="card-body">
+                        <table border="1" style="width: 100%;" id="datatablesSimple">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>Alamat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($mem as $mber) { ?>
+                                    <tr>
+                                        <th><?= $mber->id ?></th>
+                                        <th><?= $mber->nama ?></th>
+                                        <th><?= $mber->email ?></th>
+                                        <th><?= $mber->alamat ?></th>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-auto bg-primary">
-            <div class="d-flex flex-column px-4 pt-2 text-white min-vh-100">
-                <ul style="list-style-type: none; margin-left: -25%;" class="mb-sm-auto py-2" id="menu">
-                    <li class="mb-1" style="font-size: 18px; font-weight:300;"><a href="<?= base_url() ?>" style="text-decoration:none; color:white;"><i class="bi bi-speedometer"></i> Dashboard</a></li>
-                    <li class="mb-1" style="font-size: 18px; font-weight:300;"><a href="<?= base_url() ?>" style="text-decoration:none; color:white;"><i class="bi bi-people"></i> Member</a></li>
-                    <hr>
-                    <li class="mb-2" style="font-size: 18px; font-weight:300;">
-                        <a style="text-decoration: none; color:white;" href="#nav1" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="bi bi-book"></i> Buku</a>
-                        <div class="collapse" id="nav1">
-                            <div class="card-body d-flex justify-content-center" style="width: 6rem;">
-                                <ul style="text-decoration: none; list-style-type: none;">
-                                    <li>Ensiklopedia</li>
-                                    <li>Majalah</li>
-                                    <li>Kamus</li>
-                                    <li>Komik/Manga</li>
-                                    <li>Novel</li>
-                                    <li>Biografi</li>
-                                    <li>Naskah</li>
-                                    <li>Light Novel</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="mb-2" style="font-size: 18px; font-weight:300;">
-                        <a style="text-decoration: none; color:white;" href="#nav2" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="bi bi-pencil"></i> Alat</a>
-                        <div class="collapse" id="nav2">
-                            <div class="card-body d-flex justify-content-center" style="width: 6rem;">
-                                <ul style="text-decoration: none; list-style-type: none;">
-                                    <li>Adhensive & Tape</li>
-                                    <li>Alat Tulis</li>
-                                    <li>Pemotong Kertas</li>
-                                    <li>Penjilidan & Penyimpanan</li>
-                                    <li>Produk Kertas</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="mb-2" style="font-size: 18px; font-weight:300;">
-                        <a style="text-decoration: none; color:white;" href="#nav3" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="bi bi-display"></i> Teknologi</a>
-                        <div class="collapse" id="nav3">
-                            <div class="card-body d-flex justify-content-center" style="width: 5rem;">
-                                <ul style="text-decoration: none; list-style-type: none;">
-                                    <li>Kabel Dan Konektor</li>
-                                    <li>Accessories</li>
-                                    <li>Monitor</li>
-                                    <li>Mouse</li>
-                                    <li>Keyboard</li>
-                                    <li>Headset</li>
-                                    <li>Speaker</li>
-                                    <li>Webcam & Modem</li>
-                                    <li>Drawing Device</li>
-                                    <li>Mousepad</li>
-                                    <li>Printer</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <hr>
-                    <li class="mb-1" style="font-size: 18px; font-weight:300;"><a href="#" style="text-decoration: none; color: white;"><i class="bi bi-box"></i> Barang Keluar</a></li>
-                    <li class="mb-1" style="font-size: 18px; font-weight:300;"><a href="#" style="text-decoration: none; color: white;"><i class="bi bi-cash-coin"></i> Omset</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col py-2">
-            <div class="row">
-                <div class="col-lg-12">
-                    
+        </main>
+        <footer class="py-4 bg-dark mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; Elysia Book <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </div>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        &middot;
+                        <a href="#">Terms &amp; Conditions</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="bg-dark text-white">
-    <div class="d-flex justify-content-center py-4">&copy; Copyright 2023-<script>
-            document.write(new Date().getFullYear());
-        </script>
+        </footer>
     </div>
 </div>
