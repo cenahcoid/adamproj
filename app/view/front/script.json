@@ -8,6 +8,9 @@
     },
     {
       "src": "assets/js/script.js"
+    },
+    {
+      "src": "assets/js/datatables-simple.js"
     }
   ]
 }
