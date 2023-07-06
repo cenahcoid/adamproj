@@ -9,6 +9,10 @@
                         Dashboard
                     </a>
                     <a class="nav-link " href="<?= base_url('member') ?>">
+                        <div class="sb-nav-link-icon"><i class="bi bi-person"></i></div>
+                        Member
+                    </a>
+                    <a class="nav-link " href="<?= base_url() ?>">
                         <div class="sb-nav-link-icon"><i class="bi bi-person-badge"></i></div>
                         Karyawan
                     </a>

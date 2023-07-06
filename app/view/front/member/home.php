@@ -9,6 +9,10 @@
                         Dashboard
                     </a>
                     <a class="nav-link " href="<?= base_url('member') ?>">
+                        <div class="sb-nav-link-icon"><i class="bi bi-person"></i></div>
+                        Member
+                    </a>
+                    <a class="nav-link " href="<?= base_url() ?>">
                         <div class="sb-nav-link-icon"><i class="bi bi-person-badge"></i></div>
                         Karyawan
                     </a>
@@ -67,16 +71,21 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-2 py-2">
-                <h1 class="py-1">Data Karyawan</h1>
+                <h1 class="py-1">Data Member</h1>
                 <div class="card mb-4">
                     <div class="card-body">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore temporibus dolorem illum soluta porro iure facilis nihil magnam officia accusamus veniam aspernatur culpa, voluptatibus exercitationem velit inventore aliquam assumenda magni?
+                        Disini Tempat Mengelola Member Yang Sudah Daftar Di Elysia Book
+                    </div>
+                    <div class="card-footer d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">
+                            Tambah Member
+                        </button>
                     </div>
                 </div>
                 <div class="card mb-4">
                     <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        Data Karyawan
+                        <i class="bi bi-table"></i>
+                        Data Member
                     </div>
                     <div class="card-body">
                         <table border="1" style="width: 100%;" id="datatablesSimple">
@@ -86,6 +95,7 @@
                                     <th>Nama</th>
                                     <th>Email</th>
                                     <th>Alamat</th>
+                                    <th>Opsi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,6 +105,10 @@
                                         <th><?= $mber->nama ?></th>
                                         <th><?= $mber->email ?></th>
                                         <th><?= $mber->alamat ?></th>
+                                        <th>
+                                            <button data-toggle="modal" data-target="#modal2<?= $mber->id ?>" type="button" class="btn btn-info mr-2 ml-2" href="<?= base_url('member/edit/') ?>">Edit</button>
+                                            <a href="<?= base_url('member/hapus/') ?><?= $mber->id ?>" onclick="return confirm('apakah kamu yakin?')" class="btn btn-danger">Hapus</a>
+                                        </th>
                                     </tr>
                                 <?php } ?>
                             </tbody>

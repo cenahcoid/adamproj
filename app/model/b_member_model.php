@@ -9,9 +9,9 @@ class B_Member_Model extends SENE_Model
         parent::__construct();
         $this->db->from($this->tbl, $this->tbl_as);
     }
-    public function set($dam)
+    public function set($di)
     {
-        return $this->db->insert($this->tbl,$dam);
+        return $this->db->insert($this->tbl,$di);
     }
     public function update($id,$du)
     {

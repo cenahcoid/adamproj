@@ -16,6 +16,7 @@ class Member extends JI_Controller
             redir(base_url('login'));
             return;
         }
+
         $this->setTitle("Dashboard");
         $this->setDescription("Omedeto");
         $this->setAuthor("Seme Framework");
@@ -27,5 +28,41 @@ class Member extends JI_Controller
         $this->putThemeContent("member/home_bottom", $data);
         $this->loadLayout('col-1', $data);
         $this->render();
+    }
+    public function tambah()
+    {
+        $di = array();
+        $di['nama'] = $this->input->post("nm");
+        $di['email'] = $this->input->post("ml");
+        $di['alamat'] = $this->input->post("amt");
+
+        $res = $this->mem->set($di);
+        if ($res) {
+            echo "<script>alert('berhasil ditambahkan')</script>";
+            header('location: ' . base_url("member"));
+        } else {
+            echo "<script>alert('Gagal ditambahkan')</script>";
+            header('location: ' . base_url("member"));
+        }
+    }
+    public function hapus($id, $du)
+    {
+        $this->mem->del($id, $du);
+        header('location: ' . base_url("member"));
+    }
+    public function edit($id, $du)
+    {
+        $du = array();
+        $du['nama'] = $this->input->post("nam");
+        $du['email'] = $this->input->post("eml");
+        $du['alamat'] = $this->input->post("amat");
+        $res = $this->mem->update($id, $du);
+        if ($res) {
+            echo "<script>alert('berhasil Di Edit')</script>";
+            header('location: ' . base_url("member"));
+        } else {
+            echo "<script>alert('Gagal Di Edit')</script>";
+            header('location: ' . base_url("member"));
+        }
     }
 }
