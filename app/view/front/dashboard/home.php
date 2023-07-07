@@ -1,3 +1,20 @@
+<style>
+    .set-bg {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        background-image: url('assets/img/clock_elysia.jpg');
+        height: 350px;
+    }
+
+    .clock {
+        overflow: hidden;
+    }
+
+    .clock div {
+        font-size: 50px;
+    }
+</style>
 <div id="layoutSidenav">
     <div id="layoutSidenav_nav">
         <nav class="sb-sidenav accordion sb-sidenav bg-primary " id="sidenavAccordion">
@@ -17,12 +34,12 @@
                         Karyawan
                     </a>
                     <div class="sb-sidenav-menu-heading text-white">Body</div>
-                    <a class="nav-link collapsed " href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="bi bi-book"></i></div>
                         Buku
                         <div class="sb-sidenav-collapse-arrow"><i class="bi bi-caret-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="#">Ensiklopedia</a>
                             <a class="nav-link" href="#">Majalah</a>
@@ -34,14 +51,14 @@
                             <a class="nav-link" href="#">Light Novel</a>
                         </nav>
                     </div>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                         <div class="sb-nav-link-icon"><i class="bi bi-pencil"></i></div>
                         Alat
                         <div class="sb-sidenav-collapse-arrow"><i class="bi bi-caret-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                 <a class="nav-link" href="#">Adhensive & Tape</a>
                                 <a class="nav-link" href="#">Alat Tulis</a>
                                 <a class="nav-link" href="#">Pemotong Kertas</a>
@@ -53,7 +70,8 @@
                     <div class="sb-sidenav-menu-heading text-white">Footer</div>
                     <a class="nav-link" href="#">
                         <div class="sb-nav-link-icon"><i class="bi bi-clock-history"></i></div>
-                        History Log</a>
+                        History Log
+                    </a>
                     </a>
                     <a class="nav-link" href="#">
                         <div class="sb-nav-link-icon"><i class="bi bi-cash-coin"></i></div>
@@ -94,7 +112,10 @@
         <footer class="py-4 bg-dark mt-auto">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Elysia Book <script>document.write(new Date().getFullYear());</script></div>
+                    <div class="text-muted">Copyright &copy; Elysia Book <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </div>
                     <div>
                         <a href="#">Privacy Policy</a>
                         &middot;
