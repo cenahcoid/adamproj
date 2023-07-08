@@ -12,10 +12,19 @@
                         <div class="sb-nav-link-icon"><i class="bi bi-person"></i></div>
                         Member
                     </a>
-                    <a class="nav-link " href="<?= base_url() ?>">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsekaryawan" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="bi bi-person-badge"></i></div>
                         Karyawan
+                        <div class="sb-sidenav-collapse-arrow"><i class="bi bi-caret-down"></i></div>
                     </a>
+                    <div class="collapse" id="collapsekaryawan" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="#">Daftar Karyawan</a>
+                            <a class="nav-link" href="#">Jadwal Masuk</a>
+                            <a class="nav-link" href="#">Izin Cuti</a>
+                            <a class="nav-link" href="#">Gaji</a>
+                        </nav>
+                    </div>
                     <div class="sb-sidenav-menu-heading text-white">Body</div>
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                         <div class="sb-nav-link-icon"><i class="bi bi-book"></i></div>
@@ -92,6 +101,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Kode Member</th>
                                     <th>Nama</th>
                                     <th>Email</th>
                                     <th>Alamat</th>
@@ -102,6 +112,7 @@
                                 <?php foreach ($mem as $mber) { ?>
                                     <tr>
                                         <th><?= $mber->id ?></th>
+                                        <th><?= $mber->kode_member ?></th>
                                         <th><?= $mber->nama ?></th>
                                         <th><?= $mber->email ?></th>
                                         <th><?= $mber->alamat ?></th>

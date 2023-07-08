@@ -32,6 +32,7 @@ class Member extends JI_Controller
     public function tambah()
     {
         $di = array();
+        $di['kode_member'] = $this->input->post("kd");
         $di['nama'] = $this->input->post("nm");
         $di['email'] = $this->input->post("ml");
         $di['alamat'] = $this->input->post("amt");
@@ -53,6 +54,7 @@ class Member extends JI_Controller
     public function edit($id, $du)
     {
         $du = array();
+        $du['kode_member'] = $this->input->post("kod");
         $du['nama'] = $this->input->post("nam");
         $du['email'] = $this->input->post("eml");
         $du['alamat'] = $this->input->post("amat");

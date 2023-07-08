@@ -61,6 +61,7 @@ CREATE TABLE `b_karyawan` (
 
 CREATE TABLE `b_member` (
   `id` int(6) NOT NULL,
+  `kode_member` varchar(6) NOT NULL,
   `nama` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL
@@ -69,14 +70,6 @@ CREATE TABLE `b_member` (
 --
 -- Dumping data for table `b_member`
 --
-
-INSERT INTO `b_member` (`id`, `nama`, `email`, `alamat`) VALUES
-(8, 'Adam', 'shizualpha@gmail.com', 'Kp.Legok Nangka'),
-(9, 'Elysia', 'elysiachan@gmail.com', 'Armada'),
-(10, 'Syahdan', 'syahdan@gmail.com', 'Kp.Pasir Pendeuy'),
-(11, 'Rosa', 'Rosa@gmail.com', 'Cikancung'),
-(12, 'Hadi', 'Hadi@gmail.com', 'Panyirapan'),
-(13, 'Kiana Kaslana', 'Kiana@gmail.com', 'Armada');
 
 -- --------------------------------------------------------
 
