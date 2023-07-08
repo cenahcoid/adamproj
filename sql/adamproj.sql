@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2023 at 10:41 AM
+-- Generation Time: Jul 08, 2023 at 04:23 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -70,6 +70,13 @@ CREATE TABLE `b_member` (
 --
 -- Dumping data for table `b_member`
 --
+
+INSERT INTO `b_member` (`id`, `kode_member`, `nama`, `email`, `alamat`) VALUES
+(1, 'AAA001', 'Adam', 'shizualpha@gmail.com', 'Kp.Legok Nangka'),
+(2, 'AAA002', 'Syahdan', 'syahdan@gmail.com', 'Kp.Pasir Pendeuy'),
+(3, 'AAA003', 'Hadi', 'Hadi@gmail.com', 'Panyirapan'),
+(4, 'AAA004', 'Sonny', 'Sonny@gmail.com', 'Panyirapan'),
+(5, 'AAA005', 'Andika', 'andika@gmail.com', 'Kp.Legok Nangka');
 
 -- --------------------------------------------------------
 
@@ -178,12 +185,6 @@ CREATE TABLE `d_buku` (
 --
 
 --
--- Indexes for table `b_karyawan`
---
-ALTER TABLE `b_karyawan`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `b_member`
 --
 ALTER TABLE `b_member`
@@ -228,16 +229,10 @@ ALTER TABLE `d_buku`
 --
 
 --
--- AUTO_INCREMENT for table `b_karyawan`
---
-ALTER TABLE `b_karyawan`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `b_member`
 --
 ALTER TABLE `b_member`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `b_user`
