@@ -4,9 +4,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modal1label">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
             <div class="modal-body">
                 <form method="post" action="<?= base_url("member/tambah") ?>">
@@ -27,7 +24,9 @@
                         <label for="alamat">Alamat</label>
                         <input type="text" class="form-control" id="alamat" name="amt" placeholder="Isi Alamat Member" required>
                     </div>
+                    <div class="form-group py-2">
                     <input style="float: right;" type="submit" class="btn btn-primary" value="Submit">
+                    </div>
                 </form>
             </div>
         </div>
@@ -40,9 +39,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modal2label">Edit</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-body">
                     <form method="post" action="<?= base_url("member/edit/") ?><?= $mber->id ?>">
@@ -59,7 +55,9 @@
                             <label for="alamat">Alamat</label>
                             <input type="text" class="form-control" id="alamat" name="amat" placeholder="Isi Alamat Member" value="<?= $mber->alamat ?>" required>
                         </div>
+                        <div class="form-group py-2">
                         <input style="float: right;" type="submit" onclick="return confirm('Anda Yakin Akan Mengeditnya?')" class="btn btn-primary" value="Submit">
+                        </div>
                     </form>
                 </div>
             </div>
