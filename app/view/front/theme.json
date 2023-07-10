@@ -14,11 +14,11 @@
         },
         {
             "rel": "stylesheet",
-            "href": "assets/css/bootstrap.min.css"
+            "href": "assets/css/bootstrap5.min.css"
         },
         {
             "rel":"stylesheet",
-            "href": "assets/css/styles.css"
+            "href": "assets/css/style.css"
         },
         {
             "rel": "stylesheet",
