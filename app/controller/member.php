@@ -22,35 +22,37 @@ class Member extends JI_Controller
         $this->setAuthor("Seme Framework");
         $this->setKeyword("Seme Framework");
 
-        $data['mem'] = $this->mem->get();
-
         $this->putThemeContent("member/home", $data);
-        $this->putThemeContent("member/home_bottom", $data);
+        $this->putJsContent("member/home_bottom", $data);
+        $this->putThemeContent("member/home_modal", $data);
         $this->loadLayout('col-1', $data);
         $this->render();
     }
-    public function tambah()
-    {
-        $di = array();
-        $di['kode_member'] = $this->input->post("kd");
-        $di['nama'] = $this->input->post("nm");
-        $di['email'] = $this->input->post("ml");
-        $di['alamat'] = $this->input->post("amt");
 
-        $res = $this->mem->set($di);
-        if ($res) {
-            echo "<script>alert('berhasil ditambahkan')</script>";
-            header('location: ' . base_url("member"));
-        } else {
-            echo "<script>alert('Gagal ditambahkan')</script>";
-            header('location: ' . base_url("member"));
-        }
+    public function read()
+    {
+        $data = $this->mem->get();
+
+        $response = array(
+            'data' => $data
+        );
+        echo json_encode($response);
     }
+
     public function hapus($id, $du)
     {
-        $this->mem->del($id, $du);
-        header('location: ' . base_url("member"));
+        $id = $_POST['id'];
+        $deleteSuccess = $this->mem->del($id, $du);
+
+        if ($deleteSuccess) {
+            $response['success'] = true;
+        } else {
+            $response['success'] = false;
+        }
+
+        echo json_encode($response);
     }
+
     public function edit($id, $du)
     {
         $du = array();
