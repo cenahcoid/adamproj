@@ -11,9 +11,6 @@
                 <a class="link" href="<?= base_url('member') ?>">
                     Member
                 </a>
-                <a class="link" href="#">
-                    Karyawan
-                </a>
             </div>
         </div>
         <div class="d-flex justify-content-center">
@@ -21,20 +18,9 @@
                 <a class="link" href="<?= base_url('buku')?>">
                     Buku
                 </a>
-                <a class="link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                <a class="link" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     Alat
                 </a>
-                <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                            <a class="link" href="#">Adhensive & Tape</a>
-                            <a class="link" href="#">Alat Tulis</a>
-                            <a class="link" href="#">Pemotong Kertas</a>
-                            <a class="link" href="#">Penjilidan & Penyimpanan</a>
-                            <a class="link" href="#">Produk Kertas</a>
-                        </a>
-                    </nav>
-                </div>
             </div>
         </div>
         <div class="d-flex justify-content-end">

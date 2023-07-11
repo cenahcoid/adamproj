@@ -18,7 +18,7 @@
 <div class="container-fluid py-2">
     <div class="card">
         <div class="card-body">
-            <table id="datatablesSimple" style="width:100%" class="tampil">
+            <table id="table" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -32,20 +32,7 @@
                         <th>Harga</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <?php foreach ($book as $ebook) { ?>
-                        <tr>
-                            <th><?= $ebook->id ?></th>
-                            <th><?= $ebook->kode_buku ?></th>
-                            <th><?= $ebook->judul ?></th>
-                            <th><?= $ebook->deskripsi ?></th>
-                            <th><?= $ebook->penulis ?></th>
-                            <th><?= $ebook->penerbit ?></th>
-                            <th><?= $ebook->jenis_buku ?></th>
-                            <th><?= $ebook->jumlah ?></th>
-                            <th><?= $ebook->harga ?></th>
-                        </tr>
-                    <?php } ?>
+                <tbody>      
                 </tbody>
             </table>
         </div>

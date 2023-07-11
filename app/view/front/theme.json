@@ -1,8 +1,8 @@
 {
     "link": [
         {
-            "rel" : "icon",
-            "href" : "img/icon.gif"
+            "rel": "icon",
+            "href": "img/icon.gif"
         },
         {
             "rel": "stylesheet",
@@ -17,12 +17,16 @@
             "href": "assets/css/bootstrap5.min.css"
         },
         {
-            "rel":"stylesheet",
+            "rel": "stylesheet",
             "href": "assets/css/style.css"
         },
         {
             "rel": "stylesheet",
             "href": "https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
+        },
+        {
+            "rel": "stylesheet",
+            "href": "https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css"
         }
     ]
 }
